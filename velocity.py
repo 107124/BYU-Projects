@@ -1,54 +1,48 @@
-# # Mass (in kg): 5
-# # Gravity (in m/s^2, 9.8 for Earth, 24 for Jupiter): 9.8
-# # Time (in seconds): 10
-# # Density of the fluid (in kg/m^3, 1.3 for air, 1000 for water): 1.3
-# # Cross sectional area (in m^2): 0.01
-# # Drag constant (0.5 for sphere, 1.1 for cylinder): 0.5
+from cmath import pi
+from re import sub
 
-# # The inner value of c is: 0.003
-# # The velocity after 10.0 seconds is: 67.512 m/s
+childs_meal = float(input("Childs meal: "))
+adults_meal = float(input("Adults meal: "))
+total_children = int(input('Total children: '))
+total_adults = int(input('Total adults: '))
+sales_tax_rate = int(input('What is the sales tax: '))
+Payment_amount = int(input('What is the payment amount: '))
 
-# in terminal install the dependency: pip3 install matplotlib
+print(' ')
+print(str(f"What is the price of a child's meal? ${childs_meal}" ))
+print(str(f"What is the price of an adult's meal? ${adults_meal}" ))
+print(str(f"How many children are there? {total_children}" ))
+print(str(f"How many adults are there? {total_adults}" ))
+print(str(f"What is the sales tax rate? {sales_tax_rate} " ))
+print(' ')
 
-import math
-from matplotlib import pyplot as plt
-import numpy as np
+subtotal = childs_meal * 2 + adults_meal
+# subtotal = childs_meal * 4 + adults_meal * 2
+# pi_0 = subtotal
+print(f"Subtotal: ${subtotal}")
+Sales_tax = subtotal * sales_tax_rate / 100
 
-m = float(input("Mass (in kg):\t"))
-g = float(input("What's gravity? (9.8 for earth) (24 for jupiter)):\t"))
-t = float(input("Time (in seconds):\t"))
-p = float(input("Density of the fluid (in kg/m^3, 1.3 for air, 1000 for water):\t"))
-A = float(input("Cross sectional area (in m^2)\t"))
-C = float(input("Drag constant (0.5 for sphere, 1.1 for cylinder):\t"))
+pi = Sales_tax
+print(f"Sales tax: ${pi:.2f}")
+Total = subtotal
+Sub_total = subtotal + Sales_tax
+pi_2 = Sub_total
+print(f"Total: ${pi_2:.2f}")
+print(' ')
 
-# formulas:
-c = (1 / 2) * p * A * C
-
-velocity = math.sqrt((m * g) / c) * (1 - math.exp((-math.sqrt(m * g * c) / m) * t))
-
-
-
-# output:
-print(f"The inner value of c is: {round(c, 3)}")
-print(f"Velocity after {t} seconds is: {velocity: .3f} m/s")
-
-# graph it for the user:
-figure, axes = plt.subplots()
-
-axes.set_title("Gravity Differences")
-
-plt.xlabel("Time")
-plt.ylabel("Velocity")
-
-# start, stop
-line = np.linspace(0, t)
-
-bowling_ball = 3.14 * 8 ** 2
-bread = 3.14 * 5 ** 2
-
-axes.plot(line, line * bowling_ball, label="Bowling Ball")
-axes.plot(line, line * bread, label="Bread")
+print(f"What is the payment amount: ${Payment_amount} ")
+Change = Payment_amount - Total - pi
+pi = Change
+print(f"Change: ${pi:.2f}")
 
 
-axes.legend()
-plt.show()
+
+
+
+
+
+
+
+
+
+# print(f"the number is {8}.")
