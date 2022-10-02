@@ -7,9 +7,9 @@
 '''
 
 desserts = {
-"cake": 6.99,
-"donuts": 1.99,
-"ice cream": 2.99
+    "cake": 6.99,
+    "donuts": 1.99,
+    "ice cream": 2.99
 }
 
 
@@ -30,26 +30,26 @@ dessert_display = [print(f"{dessert}: ${price}") for dessert, price in desserts.
 
 
 while True:
-dessert_choice = input("Which dessert would you like?\n").lower()
+    dessert_choice = input("Which dessert would you like?\n").lower()
 
 
-dessert_total = 0
+    dessert_total = 0
 
 
-if dessert_choice == "cake":
-print("Cake it is!")
-dessert_total = desserts["cake"]
-break
-elif dessert_choice == "donuts":
-print("I hope you're okay with fresh donuts...")
-dessert_total = desserts["donuts"]
-break
-elif dessert_choice == "ice cream":
-print("I hope that's not too cold for you!")
-dessert_total = desserts["ice cream"]
-break
-else:
-print(f"I'm sorry, {dessert_choice} is not on our menu.")
+    if dessert_choice == "cake":
+        print("Cake it is!")
+        dessert_total = desserts["cake"]
+        break
+    elif dessert_choice == "donuts":
+        print("I hope you're okay with fresh donuts...")
+        dessert_total = desserts["donuts"]
+        break
+    elif dessert_choice == "ice cream":
+        print("I hope that's not too cold for you!")
+        dessert_total = desserts["ice cream"]
+        break
+    else:
+        print(f"I'm sorry, {dessert_choice} is not on our menu.")
 
 
 
