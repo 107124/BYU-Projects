@@ -24,5 +24,3 @@ while True:
 
 print("Have a nice day!")
 
-
-
