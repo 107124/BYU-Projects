@@ -1,16 +1,18 @@
+# added creativity:
+# I added a way to filter out any other unrelated data in the file. By doing this, it will
+# not break the program, but skip it and keep moving on to valid, usable data by using a try except clause.
+
 from xml.etree.ElementTree import QName
 
-
 year_list = []
-
 group_list = []
 av_life_list = []
+life_year_list = []
 
 min = 200
 max = -1
 min_av = ""
 max_av = ""
-life_year_list = []
 
 new_max = -1
 new_min = 200
@@ -53,6 +55,6 @@ with open("life-expectancy.csv") as facts:
     print(f"\nmax: ", max)
     print(f"max line is: ", max_av)
     average = sum(life_year_list) / len(life_year_list)
-    print(f"\n\nThe average world life expectancy for the year {search} is : {average}")
-    print(f"\n{search_min[0].title()} has the lowest life expectancy average of {new_min} for the year {search}")
-    print(f"\n{search_max[0].title()} has the highest life expectancy average of {new_max} for the year {search}\n")
+    print(f"\n\nThe average world life expectancy for the year {search} is : {round(average, 2)}")
+    print(f"\n{search_min[0].title()} has the lowest life expectancy average of {round(new_min, 2)} for the year {search}")
+    print(f"\n{search_max[0].title()} has the highest life expectancy average of {round(new_max, 2)} for the year {search}\n")
